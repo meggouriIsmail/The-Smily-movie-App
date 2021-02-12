@@ -1,0 +1,20 @@
+{
+  "name": "movies_api",
+  "version": "1.0.0",
+  "description": "movie app from tmdb api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "el meggo",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "env": "0.0.2",
+    "express": "^4.17.1",
+    "mime": "^2.5.0",
+    "mime-db": "^1.45.0",
+    "node-fetch": "^2.6.1",
+    "path": "^0.12.7"
+  }
+}
