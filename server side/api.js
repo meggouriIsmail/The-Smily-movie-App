@@ -132,7 +132,7 @@ app.use(function(req,res,next){
     }
     else if (/^\/(?:[\w\d]+)(?:[\/?#].*$)?$/.test(req.url)) {
         let [,basename] = req.url.match(/^\/([\w\d]+)(?:[\/?#].*$)?$/);
-        req.url = `/`;
+        req.url = `/home.html`;
     }
     next();
 });
