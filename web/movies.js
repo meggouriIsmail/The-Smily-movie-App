@@ -4,12 +4,13 @@ document.addEventListener("DOMContentLoaded", main, false);
 const form = document.querySelector('#form');
 const root = document.querySelector('.root');
 form.addEventListener('submit', searchMovies);
-
+const URL = document.location.origin;
+console.log(URL);
 function main() {
     
     // Get genres
     (function getGenres() {
-        fetch("http://127.0.0.1:3300/genres")
+        fetch(URL+'/genres')
             .then(response => response.json())
             .then(data => data.map(function (genre) {
                 if (genre.name.toLowerCase() !== "documentary") {
@@ -58,7 +59,7 @@ function main() {
         const h3 = document.createElement('H3');
         var content = "";
     
-        fetch("http://127.0.0.1:3300/movies&with_genre=" + id)
+        fetch(URL+'/movies&with_genre='+id)
             .then(response => response.json())
             .then(data => { data.map(movie => {
                 const movieTitle = movie.title.slice(0, 9);

@@ -1,6 +1,7 @@
 const app = require('./api');
 
-const port = 3300;
-const hostname = '127.0.0.1'
+require('dotenv').config();
 
-app.listen(port, hostname, () => {console.log(`Listening on http://${hostname}:${port}...`);});
+const port = process.env.PORT || 3300;
+
+app.listen(port, () => {console.log(`Listening on http://localhost:${port}...`);});

@@ -8,12 +8,6 @@ posters.forEach(function getMovieId(moviePoster) {
     });
 });
 
-// posters.forEach(function getMovieId(moviePoster) {
-//     moviePoster.addEventListener('click', function clicked() {
-//         window.location = "/movie-details.html?id";
-//     });
-// });
-
 document.addEventListener("DOMContentLoaded", main, false);
 
 const videoContainer = document.querySelector('.box');
@@ -25,15 +19,16 @@ const backdrop = document.querySelector('.backdrop');
 
 const backdropPath = "https://image.tmdb.org/t/p/original";
 const posterPath = "https://image.tmdb.org/t/p/w300";
+const URL_M = document.location.origin;
 
 
 function main() {
     
     const id = window.location.href.split('=')[1];
-    // Get genres
+    // Get The video
     getvideos(id);
     function getvideos(id) {
-        fetch("http://127.0.0.1:3300/movie_videos/id=" + id)
+        fetch(URL_M + '/movie_videos/id=' + id)
         .then(response => response.json())
         .then(function (video) {
             const key = video[0]['key'];
@@ -43,8 +38,7 @@ function main() {
     
     moviesDetails(id)
     function moviesDetails(id) {
-        
-        fetch("http://127.0.0.1:3300/movie_informations/id=" + id)
+        fetch(URL_M + '/movie_informations/id=' + id)
         .then(response => response.json())
         .then(function (movie) {
             backdrop.src = backdropPath + movie['backdrop_path'];
