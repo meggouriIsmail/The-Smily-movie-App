@@ -117,32 +117,6 @@ app.get("/movies&with_genre=:id", async function (req, res){
     res.end(JSON.stringify(movies));
 });
 
-app.use(function(req,res,next){
-    if (/^\/(?:home\/?)?(?:[?#].*$)?$/.test(req.url)) {
-        req.url = "/home.html";
-        res.type('.html')
-    }
-    else if (/^\/js\/.+$/.test(req.url)) {
-        req.url = `${basename}.js`;
-        return;
-    }
-    else if (/^\/css\/.+$/.test(req.url)) {
-        req.url = `${basename}.css`;
-        return;
-    }
-    else if (/^\/(?:[\w\d]+)(?:[\/?#].*$)?$/.test(req.url)) {
-        let [,basename] = req.url.match(/^\/([\w\d]+)(?:[\/?#].*$)?$/);
-        req.url = `/home.html`;
-    }
-    next();
-});
-
-
-app.use(express.static(ASSETS_PATH, {
-    maxAge: 100,
-    setHeaders: function setHeaders(res){
-        res.setHeader("Server", "Node Api");
-    }
-}));
+app.use(express.static(ASSETS_PATH));
 
 module.exports = app;
