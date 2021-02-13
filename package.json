@@ -4,7 +4,8 @@
   "description": "movie app from tmdb api",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --exec babel-node server/index.js"
   },
   "author": "el meggo",
   "license": "ISC",
@@ -13,7 +14,7 @@
     "env": "0.0.2",
     "express": "^4.17.1",
     "mime": "^2.5.0",
-    "mime-db": "^1.45.0",
+    "mime-db": "^1.46.0",
     "node-fetch": "^2.6.1",
     "path": "^0.12.7"
   }
