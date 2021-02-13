@@ -18,7 +18,7 @@ const movieVideos = `${mainUrl}/movie/`;
 const search = mainUrl + '/search/multi' + apikey + '&language=en-US&query=';
 const params = '&page=1&include_adult=false';
 
-const ASSETS_PATH = path.resolve(__dirname, '..', 'web');
+const ASSETS_PATH = path.resolve(__dirname, '..', 'public');
 
 async function getGenres() {
     const genres = await fetch(getGenresUrl)
