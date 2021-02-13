@@ -4,8 +4,7 @@
   "description": "movie app from tmdb api",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --exec babel-node server/index.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "el meggo",
   "license": "ISC",
