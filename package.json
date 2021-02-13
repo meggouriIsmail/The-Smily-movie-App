@@ -4,7 +4,8 @@
   "description": "movie app from tmdb api",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./server/index.js"
   },
   "author": "el meggo",
   "license": "ISC",
