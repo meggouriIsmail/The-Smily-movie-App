@@ -16,6 +16,7 @@ const poster = document.querySelector('.poster');
 const title = document.querySelector('.title');
 const vote = document.querySelector('.vote');
 const backdrop = document.querySelector('.backdrop');
+const page = document.querySelector('.page');
 
 const backdropPath = "https://image.tmdb.org/t/p/original";
 const posterPath = "https://image.tmdb.org/t/p/w300";
@@ -48,5 +49,14 @@ function main() {
             vote.innerHTML = "vote average: "+ " " + movie['vote_average'];
         });
     }
-    
 }
+
+window.addEventListener('resize', function () {
+    if (window.document.body.offsetWidth <= 970){
+        page.classList.add('page-sm');        
+        page.style.backgroundImage = "url(" + poster.src +")";
+    }else {
+        page.classList.remove('page-sm');
+        page.style.backgroundImage = "url()";
+    }
+})

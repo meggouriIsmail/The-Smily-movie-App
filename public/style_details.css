@@ -35,9 +35,10 @@ body {
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     color: aliceblue;
     padding: 0 2em 0 2em;
+    z-index: 10;
 }
 .video-section {
     padding-top: 4em;
@@ -49,7 +50,7 @@ body {
     border-radius: 10px;
 }
 .description {
-    width: 700px;
+    width: 75%;
 }
 .description-text {
     height: 100px;
@@ -63,7 +64,9 @@ body {
 .poster-section {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
+    padding-bottom: 2em;
+    padding-left: 1em;
 }
 .poster {
     height: 400px;
@@ -74,10 +77,50 @@ body {
 .title {
     font-size: 24px;
     align-self: center;
-    margin: 20px 0;
+    margin: 10px 0;
 }
 .vote {
     font-size: 16px;
     margin: 0;
     align-self: center;
+}
+.page-sm{
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -5;
+}
+@media screen and (max-width:970px){
+    .bg-poster::after{
+        display: none;
+    }
+    .backdrop{
+        display: none;
+    }
+    .container{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: space-between;
+        color: aliceblue;
+        padding: 2em 2em 0 2em;
+    }
+    .box {
+        height: 400px;
+        width: 100%;
+        border: hidden;
+        border-radius: 10px;
+        align-self: center;
+    }
+    .description {
+        width: 100%;
+    }
+    .description-text {
+        height: 150px;
+        padding: 2px 5px;
+        line-height: 1.5;
+        font-size: 16px;
+        overflow-y: auto;
+        margin: 0;
+    }
 }

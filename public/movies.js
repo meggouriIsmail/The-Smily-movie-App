@@ -5,7 +5,6 @@ const form = document.querySelector('#form');
 const root = document.querySelector('.root');
 form.addEventListener('submit', searchMovies);
 const URL = document.location.origin;
-console.log(URL);
 function main() {
     
     // Get genres
